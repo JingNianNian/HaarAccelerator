@@ -1,4 +1,3 @@
-C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator.csprojAssemblyReference.cache
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\MainWindow.g.cs
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\App.g.cs
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator_Content.g.cs
@@ -34,3 +33,4 @@ C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\H
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator.csproj.CopyComplete
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator.exe
 C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator.pdb
+C:\Users\User\Desktop\AprheuaProgram\HaarAccelerator\HaarAccelerator\obj\Debug\HaarAccelerator.csprojAssemblyReference.cache
