@@ -4,18 +4,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.IO;
+using System.Windows.Media.Imaging;
+using System.Windows;
+
 namespace HaarAccelerator
 {
     class MainWindowOperate
     {
-        public static (int, int) ReplaceImage(Image image, int imageCount, int blocksCount, ClassifierChoose? classifierChecking)
+        public static (int, int) ReplaceImage(Image image)
         {
-            //ToDo : 轮换图片并取消上一个图片的引用
-            return(1,1);
-        }
-        public static void GetClassifierModel()
+            if (File.Exists(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock + 1}_{Information.ClassifierChoose}.jpg"))
+            {
+                image.Source = new BitmapImage(new Uri(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock + 1}_{Information.ClassifierChoose}.jpg"));
+                return (Information.NowImage, Information.NowBlock + 1);
+            }
+            else
+            {
+                for (int i = 1; i <= 30; i++)
+                {
+                    if (File.Exists(Information.TempBlock + $"\\image-{Information.NowImage + i}_block-{1}_{Information.ClassifierChoose}.jpg"))
+                    {
+                        image.Source = new BitmapImage(new Uri(Information.TempBlock + $"\\image-{Information.NowImage + i}_block-{1}_{Information.ClassifierChoose}.jpg"));
+                        return (Information.NowImage + i, 1);
+                    }
+                }
+                image.Source = new BitmapImage(new Uri(Information.DefaultImage));
+                if(Information.ClassifierChoose == null)
+                {
+                    return (1, 0);
+                }
+                else
+                {
+                    MessageBox.Show("图片展示完毕，请保存！");
+                    image.Source.Freeze();
+                    return (1, 0);
+                }
+                
+            }
+        }//轮换图片块显示
+        public static void GetClassifierModel(RadioButton a, RadioButton b, RadioButton c, RadioButton d)
         {
-            //ToDo : 获取选定的分类器名
-        }
+            if (a.IsChecked.Value)
+            {
+                Information.ClassifierChoose = ClassifierChoose.EyesClassifier;
+            }
+            if (b.IsChecked.Value)
+            {
+                Information.ClassifierChoose = ClassifierChoose.EarsClassifier;
+            }
+            if (c.IsChecked.Value)
+            {
+                Information.ClassifierChoose = ClassifierChoose.NoseClassifier;
+            }
+            if (d.IsChecked.Value)
+            {
+                Information.ClassifierChoose = ClassifierChoose.MouthClassifier;
+            }
+        }//设定分类器选择
     }
 }

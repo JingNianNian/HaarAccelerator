@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HaarAccelerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1400">
+        Title="HaarAccelerator" 
+        Height="810" 
+        Width="1370" 
+        Background="Pink">
     <Grid>
-        
+        <Viewbox Stretch="Fill">
+            <Canvas Width="1370" Height="810">
+                <Button x:Name="LoadingImage" Content="加载图片" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="150" FontSize="20" Background="#FF58E8FF" Click="LoadingImage_Click" Canvas.Left="30" Canvas.Top="754"/>
+                <Image x:Name="ImageBlock" HorizontalAlignment="Center" Height="650" Margin="330,60,0,0" Width="1000" VerticalAlignment="Center"/>
+                <Button x:Name="PosImage" Content="是" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" FontSize="20" Background="#FF6DEC51" Click="PosImage_Click" Canvas.Left="330" Canvas.Top="754"/>
+                <Button x:Name="SkipImage" Content="跳过" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" FontSize="20" Background="#FFE2E867" Click="SkipImage_Click" Canvas.Left="680" Canvas.Top="754"/>
+                <Button x:Name="NegImage" Content="否" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" FontSize="20" Background="#FFFF6F6F" Click="NegImage_Click" Canvas.Left="998" Canvas.Top="754"/>
+                <Button x:Name="StartClassifier" Content="开始分类" HorizontalAlignment="Left" Height="30" Margin="30,10,0,0" VerticalAlignment="Top" Width="250" Background="#FF17FF00" FontSize="20" Click="StartClassifier_Click"/>
+                <RadioButton x:Name="EyesClassifier" Content="EyesClassifier" HorizontalAlignment="Left" Height="30" Margin="330,10,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+                <RadioButton x:Name="EarsClassifier" Content="EarsClassifier" HorizontalAlignment="Left" Height="30" Margin="605,10,0,0" VerticalAlignment="Top" Width="150" FontSize="20"/>
+                <RadioButton x:Name="NoseClassifier" Content="NoseClassifier" HorizontalAlignment="Left" Height="30" Margin="866,10,0,0" VerticalAlignment="Top" Width="160" FontSize="20"/>
+                <RadioButton x:Name="MouthClassifier" Content="MouthClassifier" HorizontalAlignment="Left" Height="30" Margin="1136,10,0,0" VerticalAlignment="Top" Width="194" FontSize="20"/>
+                <Button x:Name="CancleChoose" Content="取消" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="73" FontSize="20" Background="#FFFF6666" Click="CancleChoose_Click" Canvas.Left="207" Canvas.Top="754"/>
+                <Button x:Name="Save" Content="保存" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="69" Background="#FF78A9FF" FontSize="20" Click="Save_Click" Canvas.Left="1261" Canvas.Top="754"/>
+                <StackPanel Margin="30,60,1082,69">
+                    <ListBox x:Name="lstImgs" Height="671" Width="248">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image Width="100" Height="30" HorizontalAlignment="Left"  Source="{Binding Path=SourceImage}">
+
+                                    </Image>
+                                    <Label x:Name="imageName" Margin="50,0,0,0" Content="{Binding SourceImageName}">
+
+                                    </Label>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Canvas>
+        </Viewbox>
     </Grid>
 </Window>
