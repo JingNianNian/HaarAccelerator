@@ -151,6 +151,8 @@ namespace HaarAccelerator
         {
             Information.NowBlock = 0;
             Information.NowImage = 1;
+            Information.IsStart = false;
+            Information.IsSave = false;
             Information.LoadPath.Clear();
             Information.TempBlockPath.Clear();
             Information.TempImagePath.Clear();

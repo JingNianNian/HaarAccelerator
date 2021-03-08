@@ -28,6 +28,7 @@ namespace HaarAccelerator
         public static int NowImage { get; set; } = 1;
         public static int NowBlock { get; set; } = 0;
         public static bool IsSave { get; set; } = false;
+        public static bool IsStart { get; set; } = false;
         public static ClassifierChoose? ClassifierChoose { get; set; } = null;
         public static string HaarAcceleratorTempFolder => Path.Combine(Environment.GetEnvironmentVariable("temp"), "HaarAccelerator");
         public static string HaarAcceleratorFolder => AppDomain.CurrentDomain.BaseDirectory;

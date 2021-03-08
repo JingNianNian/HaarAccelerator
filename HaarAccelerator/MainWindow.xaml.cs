@@ -49,6 +49,7 @@ namespace HaarAccelerator
         private void StartClassifier_Click(object sender, RoutedEventArgs e)
         {
             Information.IsSave = false;
+            Information.IsStart = true;
             MainWindowOperate.GetClassifierModel(EyesClassifier,EarsClassifier,NoseClassifier,MouthClassifier);
             HaarClassifier haarClassifier = new HaarClassifier();
             haarClassifier.Start();
@@ -67,24 +68,40 @@ namespace HaarAccelerator
         {
             SourceImage = new List<Images>();
             lstImgs.ItemsSource = SourceImage;
+            ImageBlock.Source.Freeze();
             ImageBlock.Source = new BitmapImage(new Uri(Information.DefaultImage));
             FileOperate.ReStart();
         }
 
         private void PosImage_Click(object sender, RoutedEventArgs e)
         {
+            if (!Information.IsStart)
+            {
+                MessageBox.Show("请先开始分类！");
+                return;
+            }
             FileOperate.TempPosSave();
             (Information.NowImage, Information.NowBlock) = MainWindowOperate.ReplaceImage(ImageBlock);
         }
 
         private void SkipImage_Click(object sender, RoutedEventArgs e)
         {
+            if (!Information.IsStart)
+            {
+                MessageBox.Show("请先开始分类！");
+                return;
+            }
             FileOperate.TempSkipSave();
             (Information.NowImage, Information.NowBlock) = MainWindowOperate.ReplaceImage(ImageBlock);
         }
 
         private void NegImage_Click(object sender, RoutedEventArgs e)
         {
+            if (!Information.IsStart)
+            {
+                MessageBox.Show("请先开始分类！");
+                return;
+            }
             FileOperate.TempNegSave();
             (Information.NowImage, Information.NowBlock) = MainWindowOperate.ReplaceImage(ImageBlock);
         }
