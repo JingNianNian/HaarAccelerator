@@ -41,14 +41,34 @@ namespace HaarAccelerator
         {
             if (File.Exists(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg"))
             {
-                File.Copy(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg", Information.TempPos + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Utility.GetTimeStamp()}.jpg");
+                var imageHandler = new ThumbImage(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg");
+                if (imageHandler.GetPosImage(Information.TempPos + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Utility.GetTimeStamp()}.jpg"))
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("PosTempSaveError!");
+                    Logger logger = new Logger(Information.Log);
+                    logger.Write("PosTempSaveError!", Logger.LogType.Error);
+                }
             }
         }
         public static void TempNegSave()
         {
             if (File.Exists(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg"))
             {
-                File.Copy(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg", Information.TempNeg + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Utility.GetTimeStamp()}.jpg");
+                var imageHandler = new ThumbImage(Information.TempBlock + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Information.ClassifierChoose}.jpg");
+                if (imageHandler.GetNegImage(Information.TempNeg + $"\\image-{Information.NowImage}_block-{Information.NowBlock}_{Utility.GetTimeStamp()}.jpg"))
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("NegTempSaveError!");
+                    Logger logger = new Logger(Information.Log);
+                    logger.Write("NegTempSaveError!", Logger.LogType.Error);
+                }
             }
         }
         public static void TempSkipSave()

@@ -55,7 +55,6 @@ C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\bin\Release\Syst
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\bin\Release\System.Numerics.Vectors.xml
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\bin\Release\System.ValueTuple.xml
-C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator.csprojAssemblyReference.cache
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\MainWindow.g.cs
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\App.g.cs
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator_Content.g.cs
