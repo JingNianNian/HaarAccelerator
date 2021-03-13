@@ -68,3 +68,4 @@ C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\Haar
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator.csproj.CopyComplete
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator.exe
 C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator.pdb
+C:\Users\86180\Documents\GitHub\HaarAccelerator\HaarAccelerator\obj\Release\HaarAccelerator.csprojAssemblyReference.cache
