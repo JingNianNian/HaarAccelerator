@@ -22,19 +22,24 @@ namespace HaarAccelerator
             if (openfiles.ShowDialog() == true)
             {
                 Information.LoadPath.AddRange(openfiles.FileNames);
-            }
-
-
-            if (Information.LoadPath.Count + Information.TempBlockPath.Count > 30)
-            {
-                MessageBox.Show("文件大于30个，请删除后重新选择！");
-                Information.LoadPath.Clear();
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
+
+
+            //if (Information.LoadPath.Count + Information.TempBlockPath.Count > 30)
+            //{
+            //    MessageBox.Show("文件大于30个，请删除后重新选择！");
+            //    Information.LoadPath.Clear();
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}
         }
         #region 临时保存
         public static void TempPosSave()

@@ -34,7 +34,7 @@ namespace HaarAccelerator
                     int blockcount = 1;
                     Mat srcimage = new Mat(image, ImreadModes.AnyColor);
                     CascadeClassifier classifier = new CascadeClassifier(Information.Xml + $"\\{Information.ClassifierChoose}.xml");
-                    OpenCvSharp.Rect[] blockrect = classifier.DetectMultiScale(srcimage, 1.1, 0, 0, new OpenCvSharp.Size(20, 20), new OpenCvSharp.Size(50, 50));
+                    OpenCvSharp.Rect[] blockrect = classifier.DetectMultiScale(srcimage, 1.1, 2, 0, new OpenCvSharp.Size(70, 70), new OpenCvSharp.Size(300, 300));
                     foreach (var block in blockrect)
                     {
                         string savepath = Information.TempBlock + $"\\image-{imagecount}_block-{blockcount}_{Information.ClassifierChoose}.jpg";
